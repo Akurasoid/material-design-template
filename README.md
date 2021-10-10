@@ -65,5 +65,5 @@ add action=dst-nat chain=dstnat dst-port=8080 protocol=tcp to-addresses=192.168.
 #set up local Debian firewall<br>
 sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT<br>
 #add new project in Jenkins for https://github.com/Akurasoid/material-design-template.git (*/master branch) - Build Triggers: GitHub hook trigger for GITScm polling<br>
-#There is some screenshots in folder "screenshot"
+#There are some screenshots in folder "screenshot"
 </p>
