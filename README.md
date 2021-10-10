@@ -4,9 +4,9 @@ sudo apt update<br>
 sudo apt-get install git<br>
 git --version <br>
 #modified git config<hr>
-user.name=Valentyn Yegorov
-user.email=akuras@ex.ua
-core.etitor=vim
+user.name=Valentyn Yegorov<br>
+user.email=akuras@ex.ua<br>
+core.etitor=vim<br>
 core.autocrlf=input<hr>
 sudo apt-get install nginx<br>
 sudo nginx -V</p>
