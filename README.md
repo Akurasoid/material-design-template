@@ -16,13 +16,13 @@ git remote -v</p>
 <p>crontab -e<br>
 #added <br>
 */1 * * * * /home/ak/trainig/MDT/timescr.sh<br>
-vi timescr.sh 
-_________________________________________________________
-#! /bin/bash
+vi timescr.sh<br>
+________________________________________________________
+#! /bin/bash<br>
 
-git pull origin master --rebase
-echo 'pull is done -' $(date) >> /home/ak/cronTlocal.log
----------------------------------------------------------
+git pull origin master --rebase<br>
+echo 'pull is done -' $(date) >> /home/ak/cronTlocal.log<br>
+________________________________________________________
 
 sudo vi /etc/nginx/sites-available/default<br>
 changes:<br>
