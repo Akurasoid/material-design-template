@@ -23,10 +23,20 @@ vi timescr.sh<br>
 git pull origin master --rebase<br>
 echo 'pull is done -' $(date) >> /home/ak/cronTlocal.log<br>
 <hr>
+chmod +x timescr.sh<br>
 
 sudo vi /etc/nginx/sites-available/default<br>
-changes:<br>
+#changes:<br>
+<hr>
 (#root /var/www/html;<br>
   root /home/ak/trainig/MDT/www;)<br>
+<hr>
+sudo systemctl restart nginx<br>
+sudo systemctl status nginx<br>
+#check webpage in browser (localhost:80)<br>
+#append some changes in index.html. check webpage in browser<br>
+git add .<br>
+git commit -am "index.html modified"<br>
+git push origin master<br>
+#check home/ak/cronTlocal.log after few min<br>
 </p>
-<br>
