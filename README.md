@@ -16,7 +16,6 @@ cd ~/trainig/MDT<br>
 git init<br>
 git clone git@github.com:Akurasoid/material-design-template.git<br>
 git remote add origin git@github.com:Akurasoid/material-design-template.git<br>
-#(SSH key already added before)<br>
 git remote -v</p>
 <p>crontab -e<br>
 #added <br>
@@ -43,6 +42,7 @@ sudo systemctl status nginx<br>
 git add .<br>
 git commit -am "index.html modified"<br>
 git push origin master<br>
+#(SSH key already added before)<br>
 #check home/ak/cronTlocal.log after few min<br>
 </p>
 <p>#Github hook<br>
@@ -54,4 +54,15 @@ sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > \<br>
      /etc/apt/sources.list.d/jenkins.list'<br>
 sudo apt-get update <br>
 sudo apt-get install jenkins<br>
-#
+sudo systemctl status jenkins<br>
+#open web-interface (localhost:8080)<br>
+#check Admin password<br>
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword<br>
+#make basic configuration<br>
+#set up dst-nat on router (MikroTik RouterOS 6.49)<br>
+/ip firewall nat<br>
+add action=dst-nat chain=dstnat dst-port=8080 protocol=tcp to-addresses=192.168.3.2<br>
+#set up local Debian firewall<br>
+sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT<br>
+#add new project in Jenkins for https://github.com/Akurasoid/material-design-template.git (*/master branch) - Build Triggers: GitHub hook trigger for GITScm polling
+</p>
