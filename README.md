@@ -3,6 +3,11 @@
 sudo apt update<br>
 sudo apt-get install git<br>
 git --version <br>
+#modified git config<hr>
+user.name=Valentyn Yegorov
+user.email=akuras@ex.ua
+core.etitor=vim
+core.autocrlf=input<hr>
 sudo apt-get install nginx<br>
 sudo nginx -V</p>
 <p>#Forked https://github.com/joashp/material-design-template to https://github.com/Akurasoid/material-design-template.git</p>
@@ -28,8 +33,8 @@ chmod +x timescr.sh<br>
 sudo vi /etc/nginx/sites-available/default<br>
 #changes:<br>
 <hr>
-(#root /var/www/html;<br>
-  root /home/ak/trainig/MDT/www;)<br>
+#root /var/www/html;<br>
+  root /home/ak/trainig/MDT/www;<br>
 <hr>
 sudo systemctl restart nginx<br>
 sudo systemctl status nginx<br>
@@ -40,3 +45,13 @@ git commit -am "index.html modified"<br>
 git push origin master<br>
 #check home/ak/cronTlocal.log after few min<br>
 </p>
+<p>#Github hook<br>
+#in github settings added http://31.43.138.248:8080/github-webhook/, Content type - application/json, events - Just the push event, chechbox "Active"<br>
+sudo apt-get install default-jdk<br>
+wget –q –O – https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add –<br>
+sudo sh –c ‘echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list’<br>
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > \<br>
+     /etc/apt/sources.list.d/jenkins.list'<br>
+sudo apt-get update <br>
+sudo apt-get install jenkins<br>
+#
