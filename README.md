@@ -11,11 +11,18 @@ cd ~/trainig/MDT<br>
 git init<br>
 git clone git@github.com:Akurasoid/material-design-template.git<br>
 git remote add origin git@github.com:Akurasoid/material-design-template.git<br>
-(SSH key already added before)<br>
+#(SSH key already added before)<br>
 git remote -v</p>
 <p>crontab -e<br>
 #added <br>
 */1 * * * * /home/ak/trainig/MDT/timescr.sh<br>
+vi timescr.sh 
+_________________________________________________________
+#! /bin/bash
+
+git pull origin master --rebase
+echo 'pull is done -' $(date) >> /home/ak/cronTlocal.log
+---------------------------------------------------------
 
 sudo vi /etc/nginx/sites-available/default<br>
 changes:<br>
