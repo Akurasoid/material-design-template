@@ -17,12 +17,12 @@ git remote -v</p>
 #added <br>
 */1 * * * * /home/ak/trainig/MDT/timescr.sh<br>
 vi timescr.sh<br>
-________________________________________________________
+<hr>
 #! /bin/bash<br>
 
 git pull origin master --rebase<br>
 echo 'pull is done -' $(date) >> /home/ak/cronTlocal.log<br>
-________________________________________________________
+<hr>
 
 sudo vi /etc/nginx/sites-available/default<br>
 changes:<br>
