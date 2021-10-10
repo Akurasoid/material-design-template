@@ -1,5 +1,5 @@
-<h1>Material Design One Page HTML Template</h1>
-<p>Set up Automated Deployments From Github With Webhook<a href="http://materializecss.com/">Materialize</a>, a CSS Framework based on Material Design.</p>
+<h1>Set up Automated Deployments From Github With Webhook</h1>
+<p>Set up Automated Deployments From Github With Webhook<br><a href="http://materializecss.com/">Materialize</a>, a CSS Framework based on Material Design.</p>
 <a href="http://joashpereira.com/templates/material_one_pager/">View Demo</a>
 <br/>
 <h3>Screenshots</h3>
