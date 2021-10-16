@@ -1,5 +1,5 @@
 pipeline{
-    agent { label 'master' }
+    agent { label 'workervm' }
     tools { nodejs 'nodeJS' }
     stages{
         stage('CompressingJS'){
