@@ -1,16 +1,17 @@
 pipeline{
     agent { label 'workervm' }
+    tools { nodejs 'nodeJS' }
     stages{
-        stage("CompressingJS"){
+        stage('CompressingJS'){
             parallel{
-                stage("CleanCSS"){
+                stage('CleanCSS'){
                     steps{
                         nodejs(nodeJSInstallationName: 'nodeJS'){
                         sh 'cleancss -o www/min/*.css www/css/*.css'
                         }
                     }
                 }
-                stage("UglifyJS"){
+                stage('UglifyJS'){
                     steps{
                         nodejs(nodeJSInstallationName: 'nodeJS'){
                         sh 'uglifyjs -o www/min/*.js www/js/*.js'
@@ -21,7 +22,7 @@ pipeline{
         }
         stage('archive'){
             steps{
-                sh "tar --exclude='./.git' --exclude='./css' --exclude='./js' -zcvf /archive/mdt.tgz"
+                sh 'tar --exclude=.git --exclude=www/js --exclude=www/css -czvf artifacts/result.tar.gz .'
             }
         }
     }
