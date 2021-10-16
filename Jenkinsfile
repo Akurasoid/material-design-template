@@ -19,5 +19,10 @@ pipeline{
                 }
             }
         }
+        stage('archive'){
+            steps{
+                sh "tar --exclude='./.git' --exclude='./css' --exclude='./js' -zcvf /archive/mdt.tgz"
+            }
+        }
     }
 } 
