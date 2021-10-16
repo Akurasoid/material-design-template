@@ -2,6 +2,11 @@ pipeline{
     agent { label 'workervm' }
     
     stages{
+        stage("Checkout"){
+            steps{
+                checkout scm
+            }
+        }
         stage('CompressingJS'){
             parallel{
                 stage('CleanCSS'){
