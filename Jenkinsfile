@@ -22,7 +22,7 @@ pipeline{
         }
         stage('archive'){
             steps{
-                sh 'tar --exclude=.git --exclude=www/js --exclude=www/css -czvf mdt.tgz .'
+                sh 'tar --exclude=.git --exclude=www/js --exclude=www/css -czvf archive/mdt.tgz .'
             }
         }
     }
