@@ -1,6 +1,6 @@
 pipeline{
     agent { label 'workervm' }
-    tools { nodejs 'nodeJS' }
+    
     stages{
         stage('CompressingJS'){
             parallel{
