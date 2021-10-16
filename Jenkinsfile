@@ -25,11 +25,5 @@ pipeline{
                 }
             }
         }
-        stage('archive'){
-            steps{
-                sh 'mkdir -p archive'
-                sh 'tar --exclude=.git --exclude=www/js --exclude=www/css -czvf archive/mdt.tgz .'
-            }
-        }
     }
 } 
