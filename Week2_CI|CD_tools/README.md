@@ -25,22 +25,31 @@ later I upgraded to OpenJDK-11-JDK because Java 11 is the recommended version to
 ![](RBAS.png)
 #### add new user<br>
 ![](users.png)
+- [x] set up VM with Jenkins - done
 ### 2. Create Agent VM<br>
 connect agent to master node <br>
 set up ssh connection between Jenkins and agent<br>
 ![](workervm_conf.png)
 #### Agent status
 ![](nodes_status.png)
+- [x] Create Agent VM and connect agent to master node - done 
 ### 3. Configure tools – NodeJS<br>
 http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 ![](NodeJS_Plugin.png)<br>
 #### Add NodeJS
 ![](NodeJS.png)
+- [x] Configure NodeJS - done
 ### 4. Create “Multibranch Pipeline” pipeline job<br>
 ![](Screenshot_1.png)
 ![](Branch.master.png)
 ![](build24.png)
 ![](build25.png)
+#### Archive content
+![](Artifacts.png)
+#### logs in "Console Output" file.
+- [x] set up pipeline job - done
 ### 5. Setup the GitHub webhook to trigger the jobs
 ![](webhook.conf.png)
 ![](webhook.status.png)
+#### Every time some changes are made in the repository Jenkins makes a new build.
+- [x] Setup the GitHub webhook - done
