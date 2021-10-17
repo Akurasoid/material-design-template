@@ -43,9 +43,9 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 #### Create named folder
 ![](folder.png)
 ![](Screenshot_1.png)
-![](Branch.master.png)
-![](build24.png)
-![](build25.png)
+![](Branch.mast.png)
+![](build74.png)
+![](build75.png)
 ![](Workspace.png)
 #### Archive content
 ![](Artifacts.png)
@@ -64,3 +64,5 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
     sudo ./install.sh
     sudo systemctl start artifactory.service
 ![](jfrog_insta.png)
+#### Then I installed Artifactory Plugin on Jenkins and added a new stage in the pipeline for publishing artifacts into Artifactory<br>
+![](default-generic-local.png)
