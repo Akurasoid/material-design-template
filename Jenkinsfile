@@ -29,6 +29,7 @@ pipeline{
             steps{
                 sh 'mkdir -p archive'
                 sh 'tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=archive -czvf archive/mdt.tgz .'
+                archiveArtifacts artifacts: 'archive/mdt.tgz', fingerprint: true
             }
         }
     }
