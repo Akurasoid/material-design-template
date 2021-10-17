@@ -61,4 +61,4 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
     cd jfrog-platform-trial-pro*
     sudo ./install.sh
     sudo systemctl start artifactory.service
-![](jfrog_install.png)
+![](jfrog_insta.png)
