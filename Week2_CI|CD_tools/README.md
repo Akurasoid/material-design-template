@@ -58,7 +58,7 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 ### Spin up VM with installed Artifactory
     wget -O jfrog-deb-installer.tar.gz "https://releases.jfrog.io/artifactory/jfrog-prox/org/artifactory/pro/deb/jfrog-platform-trial-prox/[RELEASE]/jfrog-platform-trial-prox-[RELEASE]-deb.tar.gz"
     tar -xvzf jfrog-deb-installer.tar.gz
-    cd jfrog-platform-trial-pro*
+    cd jfrog-platform-trial-prox-7.27.6-deb/
     sudo ./install.sh
     sudo systemctl start artifactory.service
 ![](jfrog_insta.png)
