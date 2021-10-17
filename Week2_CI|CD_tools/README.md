@@ -37,5 +37,10 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 #### Add NodeJS
 ![](NodeJS.png)
 ### 4. Create “Multibranch Pipeline” pipeline job<br>
-
+![](Screenshot_1.png)
+![](Branch.master.png)
+![](build24.png)
+![](build25.png)
 ### 5. Setup the GitHub webhook to trigger the jobs
+![](webhook.conf.png)
+![](webhook.status.png)
