@@ -1,9 +1,9 @@
 Push event to branch master
-08:48:16 Connecting to https://api.github.com using akuras@ex.ua/******
-Obtained Jenkinsfile from 069b007d7a7d521f36afc4307edb0ea8694e0234
+18:50:02 Connecting to https://api.github.com using akuras@ex.ua/******
+Obtained Jenkinsfile from 8a8fb6db51c9d34da6903f5412066b5fd53fb205
 [Pipeline] Start of Pipeline
 [Pipeline] node
-Running on workervm in /home/akuras/jenkins/workspace/Lab_master
+Running on workervm in /home/akuras/jenkins/workspace/ValentynYehorov_Lab_master
 [Pipeline] {
 [Pipeline] stage
 [Pipeline] { (Declarative: Checkout SCM)
@@ -12,9 +12,8 @@ The recommended git tool is: NONE
 using credential c8747004-f937-4fd2-a07c-640d0cac6f03
 Fetching changes from the remote Git repository
 Fetching without tags
-Checking out Revision 069b007d7a7d521f36afc4307edb0ea8694e0234 (master)
-Commit message: "Artifacts content added"
- > git rev-parse --resolve-git-dir /home/akuras/jenkins/workspace/Lab_master/.git # timeout=10
+Checking out Revision 8a8fb6db51c9d34da6903f5412066b5fd53fb205 (master)
+ > git rev-parse --resolve-git-dir /home/akuras/jenkins/workspace/ValentynYehorov_Lab_master/.git # timeout=10
  > git config remote.origin.url https://github.com/Akurasoid/material-design-template.git # timeout=10
 Fetching upstream changes from https://github.com/Akurasoid/material-design-template.git
  > git --version # timeout=10
@@ -22,8 +21,9 @@ Fetching upstream changes from https://github.com/Akurasoid/material-design-temp
 using GIT_ASKPASS to set credentials 
  > git fetch --no-tags --force --progress -- https://github.com/Akurasoid/material-design-template.git +refs/heads/master:refs/remotes/origin/master # timeout=10
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 069b007d7a7d521f36afc4307edb0ea8694e0234 # timeout=10
- > git rev-list --no-walk 107bbd0a8494e1f2c63acd5806cd1aa619c1ae6f # timeout=10
+ > git checkout -f 8a8fb6db51c9d34da6903f5412066b5fd53fb205 # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk 6cb2aeb6e4f5b658a8975fc7355a909aae7dff24 # timeout=10
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] withEnv
@@ -35,13 +35,11 @@ The recommended git tool is: NONE
 using credential c8747004-f937-4fd2-a07c-640d0cac6f03
 Fetching changes from the remote Git repository
 Fetching without tags
-Checking out Revision 069b007d7a7d521f36afc4307edb0ea8694e0234 (master)
-Commit message: "Artifacts content added"
+Checking out Revision 8a8fb6db51c9d34da6903f5412066b5fd53fb205 (master)
+Commit message: "Update Jenkinsfile"
 [Pipeline] }
 [Pipeline] // stage
-[Pipeline] stage
-[Pipeline] { (CompressingJS)
- > git rev-parse --resolve-git-dir /home/akuras/jenkins/workspace/Lab_master/.git # timeout=10
+ > git rev-parse --resolve-git-dir /home/akuras/jenkins/workspace/ValentynYehorov_Lab_master/.git # timeout=10
  > git config remote.origin.url https://github.com/Akurasoid/material-design-template.git # timeout=10
 Fetching upstream changes from https://github.com/Akurasoid/material-design-template.git
  > git --version # timeout=10
@@ -49,7 +47,9 @@ Fetching upstream changes from https://github.com/Akurasoid/material-design-temp
 using GIT_ASKPASS to set credentials 
  > git fetch --no-tags --force --progress -- https://github.com/Akurasoid/material-design-template.git +refs/heads/master:refs/remotes/origin/master # timeout=10
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 069b007d7a7d521f36afc4307edb0ea8694e0234 # timeout=10
+ > git checkout -f 8a8fb6db51c9d34da6903f5412066b5fd53fb205 # timeout=10
+[Pipeline] stage
+[Pipeline] { (CompressingJS)
 [Pipeline] parallel
 [Pipeline] { (Branch: CleanCSS)
 [Pipeline] { (Branch: UglifyJS)
@@ -145,14 +145,22 @@ using GIT_ASKPASS to set credentials
 ./.gitattributes
 ./.gitignore
 ./Jenkinsfile
+./Jenkinsfile.Scripted
 ./README.md
 ./Week2_CI|CD_tools/
+./Week2_CI|CD_tools/folder.png
+./Week2_CI|CD_tools/build24.png
+./Week2_CI|CD_tools/build25.png
 ./Week2_CI|CD_tools/Screenshot_1.png
+./Week2_CI|CD_tools/Console Output
+./Week2_CI|CD_tools/JFrog-Jenk-Integration.png
 ./Week2_CI|CD_tools/nodes_status.png
 ./Week2_CI|CD_tools/NodeJS_Plugin.png
 ./Week2_CI|CD_tools/users.png
 ./Week2_CI|CD_tools/NodeJS.png
-./Week2_CI|CD_tools/jfrog_install.png
+./Week2_CI|CD_tools/Branch.master.png
+./Week2_CI|CD_tools/jfrog_insta.png
+./Week2_CI|CD_tools/webhook.conf.png
 ./Week2_CI|CD_tools/workervm_conf.png
 ./Week2_CI|CD_tools/Workspace.png
 ./Week2_CI|CD_tools/RBAS.png
@@ -162,6 +170,12 @@ using GIT_ASKPASS to set credentials
 [Pipeline] archiveArtifacts
 Archiving artifacts
 Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (publish)
+[Pipeline] rtUpload
+[consumer_0] Deploying artifact: https://auras.jfrog.io/artifactory/default-generic-local/artifacts_52.tgz
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] }
