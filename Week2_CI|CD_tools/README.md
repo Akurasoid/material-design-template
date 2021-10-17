@@ -44,6 +44,7 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 ![](Branch.master.png)
 ![](build24.png)
 ![](build25.png)
+![](Workspace.png)
 #### Archive content
 ![](Artifacts.png)
 #### logs in "Console Output" file.
@@ -53,3 +54,11 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 ![](webhook.status.png)
 #### Every time some changes are made in the repository Jenkins makes a new build.
 - [x] Setup the GitHub webhook - done
+
+### Spin up VM with installed Artifactory
+    wget -O jfrog-deb-installer.tar.gz "https://releases.jfrog.io/artifactory/jfrog-prox/org/artifactory/pro/deb/jfrog-platform-trial-prox/[RELEASE]/jfrog-platform-trial-prox-[RELEASE]-deb.tar.gz"
+    tar -xvzf jfrog-deb-installer.tar.gz
+    cd jfrog-platform-trial-pro*
+    sudo ./install.sh
+    sudo systemctl start artifactory.service
+![](jfrog_install.png)
