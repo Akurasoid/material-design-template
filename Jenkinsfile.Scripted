@@ -9,11 +9,11 @@ node (‘workervm’) {
                  sh 'cleancss -o www/min/*.css www/css/*.css'             
                 } 
             } 
-//      'UglifyJS' : { 
-//              nodejs(nodeJSInstallationName: 'nodeJS'){ 
-//                 sh 'uglifyjs -o www/min/*.js www/js/*.js' 
-//                 } 
-//          }) 
+      'UglifyJS' : { 
+              nodejs(nodeJSInstallationName: 'nodeJS'){ 
+                 sh 'uglifyjs -o www/min/*.js www/js/*.js' 
+                 } 
+          }) 
     stage('archive') { 
      sh 'mkdir -p archive' 
         sh 'tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=archive -czvf archive/mdt.tgz .' 
