@@ -4,16 +4,16 @@ node (‘workervm’) {
     } 
     stage('Compressing with parallel'){ 
      parallel( 
-         stage('CleanCSS'){ 
+         'CleanCSS' : { 
                 nodejs(nodeJSInstallationName: 'nodeJS'){ 
-                sh 'cleancss -o www/min/*.css www/css/*.css'             
+                 sh 'cleancss -o www/min/*.css www/css/*.css'             
                 } 
             } 
-      stage('UglifyJS'){ 
+      'UglifyJS' : { 
               nodejs(nodeJSInstallationName: 'nodeJS'){ 
-                sh 'uglifyjs -o www/min/*.js www/js/*.js' 
+                 sh 'uglifyjs -o www/min/*.js www/js/*.js' 
                  } 
-            }) 
+          }) 
     }        
     stage('archive') { 
      sh 'mkdir -p archive' 
