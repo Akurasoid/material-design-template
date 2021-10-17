@@ -39,7 +39,9 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 #### Add NodeJS
 ![](NodeJS.png)
 - [x] Configure NodeJS - done
-### 4. Create “Multibranch Pipeline” pipeline job<br>
+### 4. Create “Multibranch Pipeline” pipeline job
+#### Create named folder
+![](folder.png)
 ![](Screenshot_1.png)
 ![](Branch.master.png)
 ![](build24.png)
