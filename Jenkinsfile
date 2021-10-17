@@ -32,5 +32,21 @@ pipeline{
                 archiveArtifacts artifacts: 'archive/mdt.tgz', fingerprint: true
             }
         }
+        stage("publish"){
+            steps{
+                rtUpload (
+                    serverId: "JFrog",
+                    spec:
+                        """{
+                            "files": [
+                                {
+                                "pattern": "archive/mdt.tgz",
+                                "target": "default-generic-local/artifacts_${BUILD_ID}.tgz"
+                                }
+                            ]
+                        }"""
+                    )
+            }
+        }
     }
-} 
+}
