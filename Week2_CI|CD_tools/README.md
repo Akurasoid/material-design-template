@@ -1,6 +1,6 @@
 # Lab: simple CI pipeline <br>
 <br>
-# install openjdk-8-jdk, Git
+# install openjdk-8-jdk, Git<br>
 sudo apt-get install software-properties-common<br>
 sudo add-apt-repository ppa:git-core/ppa<br>
 sudo apt-get update <br>
@@ -27,7 +27,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword<br>
 <br>
 # plugins – select plugins, add GitHub and Role-based authorization strategy <br>
 # add new user<br>
-![](users.png)
+![](material-design-template/Week2_CI|CD_tools/users.png)
 <br>
 # 2. Create Agent VM<br>
 # connect agent to master node <br>
