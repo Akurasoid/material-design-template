@@ -1,0 +1,175 @@
+Push event to branch master
+08:48:16 Connecting to https://api.github.com using akuras@ex.ua/******
+Obtained Jenkinsfile from 069b007d7a7d521f36afc4307edb0ea8694e0234
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on workervm in /home/akuras/jenkins/workspace/Lab_master
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential c8747004-f937-4fd2-a07c-640d0cac6f03
+Fetching changes from the remote Git repository
+Fetching without tags
+Checking out Revision 069b007d7a7d521f36afc4307edb0ea8694e0234 (master)
+Commit message: "Artifacts content added"
+ > git rev-parse --resolve-git-dir /home/akuras/jenkins/workspace/Lab_master/.git # timeout=10
+ > git config remote.origin.url https://github.com/Akurasoid/material-design-template.git # timeout=10
+Fetching upstream changes from https://github.com/Akurasoid/material-design-template.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.27.0'
+using GIT_ASKPASS to set credentials 
+ > git fetch --no-tags --force --progress -- https://github.com/Akurasoid/material-design-template.git +refs/heads/master:refs/remotes/origin/master # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 069b007d7a7d521f36afc4307edb0ea8694e0234 # timeout=10
+ > git rev-list --no-walk 107bbd0a8494e1f2c63acd5806cd1aa619c1ae6f # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential c8747004-f937-4fd2-a07c-640d0cac6f03
+Fetching changes from the remote Git repository
+Fetching without tags
+Checking out Revision 069b007d7a7d521f36afc4307edb0ea8694e0234 (master)
+Commit message: "Artifacts content added"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (CompressingJS)
+ > git rev-parse --resolve-git-dir /home/akuras/jenkins/workspace/Lab_master/.git # timeout=10
+ > git config remote.origin.url https://github.com/Akurasoid/material-design-template.git # timeout=10
+Fetching upstream changes from https://github.com/Akurasoid/material-design-template.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.27.0'
+using GIT_ASKPASS to set credentials 
+ > git fetch --no-tags --force --progress -- https://github.com/Akurasoid/material-design-template.git +refs/heads/master:refs/remotes/origin/master # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 069b007d7a7d521f36afc4307edb0ea8694e0234 # timeout=10
+[Pipeline] parallel
+[Pipeline] { (Branch: CleanCSS)
+[Pipeline] { (Branch: UglifyJS)
+[Pipeline] stage
+[Pipeline] { (CleanCSS)
+[Pipeline] stage
+[Pipeline] { (UglifyJS)
+[Pipeline] nodejs
+[Pipeline] nodejs
+[Pipeline] {
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] sh
++ cleancss -o www/min/custom-min.css www/min/plugin-min.css www/css/font-awesome.min.css www/css/materialize.css www/css/materialize.min.css www/css/style.css
++ uglifyjs -o www/min/custom-min.js www/min/plugin-min.js www/js/init.js www/js/jquery-2.1.1.min.js www/js/materialize.js www/js/materialize.min.js www/js/modernizr.js
+[Pipeline] }
+[Pipeline] // nodejs
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] // nodejs
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (archive)
+[Pipeline] sh
++ mkdir -p archive
+[Pipeline] sh
++ tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=archive -czvf archive/mdt.tgz .
+./
+./timescr.sh
+./screenshot/
+./screenshot/Screenshot from 2021-10-11 02-26-03.png
+./screenshot/Screenshot from 2021-10-11 02-11-39.png
+./screenshot/Screenshot from 2021-10-11 02-24-32.png
+./screenshot/Screenshot from 2021-10-11 02-36-42.png
+./www/
+./www/contact.php
+./www/font/
+./www/font/material-design-icons/
+./www/font/material-design-icons/Material-Design-Icons.svg
+./www/font/material-design-icons/Material-Design-Icons.ttf
+./www/font/material-design-icons/Material-Design-Icons.woff2
+./www/font/material-design-icons/Material-Design-Icons.eot
+./www/font/material-design-icons/LICENSE.txt
+./www/font/material-design-icons/Material-Design-Icons.woff
+./www/font/roboto/
+./www/font/roboto/Roboto-Bold.woff2
+./www/font/roboto/Roboto-Regular.woff
+./www/font/roboto/Roboto-Light.woff2
+./www/font/roboto/Roboto-Thin.woff2
+./www/font/roboto/Roboto-Bold.woff
+./www/font/roboto/Roboto-Thin.ttf
+./www/font/roboto/Roboto-Medium.ttf
+./www/font/roboto/Roboto-Thin.woff
+./www/font/roboto/Roboto-Light.ttf
+./www/font/roboto/Roboto-Medium.woff2
+./www/font/roboto/Roboto-Light.woff
+./www/font/roboto/Roboto-Regular.ttf
+./www/font/roboto/Roboto-Medium.woff
+./www/font/roboto/Roboto-Regular.woff2
+./www/font/roboto/Roboto-Bold.ttf
+./www/img/
+./www/img/avatar1.png
+./www/img/project5.png
+./www/img/project6.jpeg
+./www/img/project1.jpg
+./www/img/project2.jpeg
+./www/img/project4.jpg
+./www/img/parallax1.png
+./www/img/avatar3.png
+./www/img/avatar4.png
+./www/img/project3.png
+./www/img/avatar2.png
+./www/fonts/
+./www/fonts/fontawesome-webfont.ttf
+./www/fonts/fontawesome-webfont.svg
+./www/fonts/fontawesome-webfont.eot
+./www/fonts/fontawesome-webfont.woff
+./www/fonts/FontAwesome.otf
+./www/favicon.ico
+./www/index.html
+./www/min/
+./www/min/custom-min.js
+./www/min/plugin-min.js
+./www/min/custom-min.css
+./www/min/plugin-min.css
+./.gitattributes
+./.gitignore
+./Jenkinsfile
+./README.md
+./Week2_CI|CD_tools/
+./Week2_CI|CD_tools/Screenshot_1.png
+./Week2_CI|CD_tools/nodes_status.png
+./Week2_CI|CD_tools/NodeJS_Plugin.png
+./Week2_CI|CD_tools/users.png
+./Week2_CI|CD_tools/NodeJS.png
+./Week2_CI|CD_tools/jfrog_install.png
+./Week2_CI|CD_tools/workervm_conf.png
+./Week2_CI|CD_tools/Workspace.png
+./Week2_CI|CD_tools/RBAS.png
+./Week2_CI|CD_tools/README.md
+./Week2_CI|CD_tools/webhook.status.png
+./Week2_CI|CD_tools/Artifacts.png
+[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+
+GitHub has been notified of this commit’s build result
+
+Finished: SUCCESS
