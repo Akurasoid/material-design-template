@@ -1,6 +1,6 @@
 # Lab: simple CI pipeline <br>
 <br>
-# install openjdk-8-jdk, Git<br>
+# install openjdk-8-jdk, Git
 sudo apt-get install software-properties-common<br>
 sudo add-apt-repository ppa:git-core/ppa<br>
 sudo apt-get update <br>
