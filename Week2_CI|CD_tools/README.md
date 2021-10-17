@@ -27,15 +27,15 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword<br>
 <br>
 # plugins – select plugins, add GitHub and Role-based authorization strategy <br>
 # add new user<br>
-![](users.png)<br>
+![](users.png)
 <br>
 # 2. Create Agent VM<br>
 # connect agent to master node <br>
 <br>
 # 3. Configure tools – NodeJS<br>
 http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
-![](NodeJS Plugin.png)<br>
+![](NodeJS Plugin.png)
 # set up ssh connection between Jenkins and agent<br>
-![](NodeJS.png)<br>
+![](NodeJS.png)
 4. Create “Multibranch Pipeline” pipeline job<br>
 
