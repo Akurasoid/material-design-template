@@ -1,23 +1,17 @@
-node (‘workervm’) { 
- stage("Checkout"){ 
-     checkout scm 
-    } 
-    stage('Compressing with parallel'){ 
-     parallel( 
-         'CleanCSS' : { 
-                nodejs(nodeJSInstallationName: 'nodeJS'){ 
-                 sh 'cleancss -o www/min/*.css www/css/*.css'             
-                } 
-            } 
-      'UglifyJS' : { 
-              nodejs(nodeJSInstallationName: 'nodeJS'){ 
-                 sh 'uglifyjs -o www/min/*.js www/js/*.js' 
-                 } 
-          }) 
-    stage('archive') { 
-     sh 'mkdir -p archive' 
-        sh 'tar --exclude=.git --exclude=www/js --exclude=www/css --exclude=archive -czvf archive/mdt.tgz .' 
-        archiveArtifacts artifacts: 'archive/mdt.tgz', fingerprint: true 
-    } 
-}
+node ('workervm')	{
+    stage ('env defining') {    
+        env.NODEJS = tool 'nodeJS'
+        env.PATH = "${env.NODEJS}/bin:${env.PATH}"
+    }
+	stage ('JS,CSS_Compress') {
+	    parallel_steps = [ "js" : {sh '${NODEJS}/bin/uglifyjs ./www/js/* -c -o ./www/min/compressed-js.js'},
+                            "css" : {sh '${NODEJS}/bin/cleancss ./www/css/* -o ./www/min/compressed-css.css'}]
+        parallel parallel_steps
+    }
+    stage ('archive') {
+        sh 'tar --exclude=.git --exclude=www/js --exclude=www/css -cvf  archive/mdt.tgz .'    
+    }
+    stage ('publish') {
+        archiveArtifacts artifacts: 'archive/mdt.tgz', followSymlinks: false    
+    }
 }
