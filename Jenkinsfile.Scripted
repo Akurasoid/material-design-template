@@ -1,11 +1,11 @@
-node ('workervm')	{
+node ('workervm') {
     stage ('env defining') {    
-        env.NODEJS = tool 'nodeJS'
+        env.NODEJS = tool "nodeJS"
         env.PATH = "${env.NODEJS}/bin:${env.PATH}"
     }
 	stage ('JS,CSS_Compress') {
-	    parallel_steps = [ "js" : {sh '${NODEJS}/bin/uglifyjs ./www/js/* -c -o ./www/min/compressed-js.js'},
-                            "css" : {sh '${NODEJS}/bin/cleancss ./www/css/* -o ./www/min/compressed-css.css'}]
+	    parallel_steps = [ "JS" : {sh '${NODEJS}/bin/uglifyjs ./www/js/* -c -o ./www/min/compressed-js.js'},
+                            "CSS" : {sh '${NODEJS}/bin/cleancss ./www/css/* -o ./www/min/compressed-css.css'}]
         parallel parallel_steps
     }
     stage ('archive') {
