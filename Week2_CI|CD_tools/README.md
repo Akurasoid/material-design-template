@@ -67,3 +67,4 @@ http://akurasu.ln.ua:8081/pluginManager/available -> install NodeJS Plugin<br>
 #### Then I installed Artifactory Plugin on Jenkins and added a new stage in the pipeline for publishing artifacts into Artifactory<br>
 ![](JFrog-syst.png)<br>
 ![](default-generic-local.png)
+### scripted pipeline - in file "Jenkinsfile.Scripted"
