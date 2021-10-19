@@ -35,7 +35,7 @@ pipeline{
                             "files": [ 
                                 { 
                                 "pattern": "archive/mdt.tgz", 
-                                "target": "default-generic-local/artifacts_${BUILD_ID}.tgz" 
+                                "target": "default-generic-local/artifacts_${BUILD_NUMBER}.tgz" 
                                 } 
                             ] 
                         }""" 
